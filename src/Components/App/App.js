@@ -6,8 +6,20 @@ import { Playlist } from '../PlayList/PlayList';
 // CSS Styles
 import './App.css';
 
-
 export class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResults: [ 
+        { name: 'Beat it', artist: 'Michael Jackson', album: 'Bad', id: 'jdhethdyrk'},
+        { name: 'The calling', artist: 'Mandolorian', album: 'This is the way', id: '12kjhaigij' },
+        { name: 'I kissed a girl', artist: 'Katy Perry', album: 'Never Forever', id: 'asdpoiwerk' },
+        { name: 'The Hearth will go on', artist: 'Celine Dion', album: 'Whatever was', id: 'dksmeutkla' }
+      ]
+    }
+  }
+
+
   render() {
     return (
       <div>
