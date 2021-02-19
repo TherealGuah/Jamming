@@ -1,4 +1,10 @@
-import { App } from './App.css';
+import React from 'react';
+// React Components
+import { SearchBar } from '../SearchBar/SearchBar';
+import { SearchResults } from '../SearchResults/SearchResults';
+import { Playlist } from '../PlayList/PlayList';
+// CSS Styles
+import './App.css';
 
 
 export class App extends React.Component {
@@ -8,9 +14,12 @@ export class App extends React.Component {
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
           <!-- Add a SearchBar component -->
+          <SearchBar />
           <div className="App-playlist">
             <!-- Add a SearchResults component -->
+            <SearchResults />
             <!-- Add a Playlist component -->
+            <Playlist />
           </div>
         </div>
       </div>
