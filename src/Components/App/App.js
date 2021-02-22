@@ -48,21 +48,21 @@ class App extends React.Component {
 
   savePlaylist() {
     //alert('Is working!');
-    const trackURIs = this.state.playlistTracks.map(track =>  track.uri);
-    
-    Spotify.savePlaylist(this.state.playlistName, trackURIs)
-    .then( () => {
+    const trackUris = this.state.playlistTracks.map(track =>  track.uri);
+    //console.log(trackUris);
+    Spotify.savePlaylist(this.state.playlistName, trackUris).then( () => {
       this.setState({ 
         playlistName: '',
         playlistTracks: []
-      })
+      });
     })
 
   }
 
-  search(searchTerm) {
-    Spotify.search(searchTerm).then(promiseResults => {
-      this.setState( {searchResults: promiseResults} );
+  search(term) {
+    //console.log(term);
+    Spotify.search(term).then( searchResults => {
+      this.setState({ searchResults: searchResults })
     })
   }
 
