@@ -1,0 +1,19 @@
+﻿Design Document Template
+February 23th 2021
+
+
+OBJECTIVE
+Remove from the search result the track that is passed is to the playlist and if a track is removed from the playlist return it to the top of the search list.
+BACKGROUND 
+When you press the + <button> and a new rack goes into the playlist you can’t clearly visualize what track moved into it. 
+
+When you press the - <button> you visualize what track was it that was removed if you need to select it again.
+
+This doesn’t allow you to order the tracks in a way that you would like to be displayed inside Spotify.
+TECHNICAL DESIGN
+
+Update the events of both <button>’s to include functionality that updates the state of both searchResults and playlistTracks.
+CAVEATS
+
+
+Potentially may cause the original state to not be able to update as intended  if both state changes are handled in one single event handler!
