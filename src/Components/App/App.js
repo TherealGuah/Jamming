@@ -28,18 +28,36 @@ class App extends React.Component {
 
   removeTrack(track) {
     let tracks = this.state.playlistTracks;
+    let results = this.state.searchResults;
+    // returns the track back to the searchResults array
+    results.unshift(track);
+
+    /* removes the event target track from playlistTracks*/
     tracks = tracks.filter(tracksItem => tracksItem.id !== track.id);
 
-    this.setState( {playlistTracks: tracks} )
+    
+    
+    
+    //updates the state of playlistTracks and searchResults
+    this.setState( {playlistTracks: tracks, searchResults: results} )
   }
 
   addTrack(track) {
     let tracks = this.state.playlistTracks;
+    let results = this.state.searchResults;
+      /* checks if the track.id targeted by event is equal to any of the savedTracks.id
+          if so doesn't return anything */
       if(tracks.find(savedTrack => savedTrack.id === track.id) ) {
         return;
       }
+      // adds track to playlistTracks
       tracks.push(track);
-      this.setState( {playlistTracks: tracks} )
+      // returns only the tracks that are diferent from track
+      results = results.filter(results => results.id !== track.id);
+
+      //updates the state of playlistTracks and searchResults
+      this.setState( {playlistTracks: tracks, searchResults: results} )
+
   } 
 
   updatePlaylistName(name) {
