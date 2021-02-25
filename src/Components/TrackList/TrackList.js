@@ -1,9 +1,8 @@
 import React from 'react';
-// CSS styles
-import './TrackList.css';
 // React Components
 import Track  from '../Track/Track'
-
+// CSS styles
+import './TrackList.css';
 
 class TrackList extends React.Component {
 
